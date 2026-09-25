@@ -48,47 +48,24 @@
               alt="Saras Ghee 500 ml" class="product-image"></div>
           <div class="product-info-section">
             <div class="title-badge-row">
-              <h2 class="product-title">Saras Ghee 500 ml</h2>
+              <h2 class="product-title" id="product-title"></h2>
             </div>
-            <div class="uid-under-title">(UID: RLTQ4AAZDGI5)</div>
-            <div class="product-detail-item"><span class="detail-value auth-status-text text-danger"> Product Already
-                Sold</span></div>
+            <div class="uid-under-title" id="product-uid"></div>
+            <div class="product-detail-item"><span class="detail-value auth-status-text text-danger" id="product-status"></span></div>
             <div class="product-attributes">
-              <div class="product-detail-item"><span class="detail-label">Batch No:</span><span class="detail-value">NJ
-                  304</span></div>
-              <div class="product-detail-item"><span class="detail-label">Expiry Date:</span><span
-                  class="detail-value">April 25, 2026</span></div>
-              <div class="product-detail-item"><span class="detail-label">Manufacture Date:</span><span
-                  class="detail-value">October 26, 2025</span></div>
-              <div class="product-detail-item"><span class="detail-label">Mrp:</span><span
-                  class="detail-value">277</span></div>
-              <div class="product-detail-item"><span class="detail-label">Produced At:</span><span
-                  class="detail-value">JAIPUR ZILA DUGDH UTPADAK SAHAKARI SANGH LTD, Jaipur</span></div>
+              <div class="product-detail-item"><span class="detail-label">Batch No:</span><span class="detail-value" id="product-batch"></span></div>
+              <div class="product-detail-item"><span class="detail-label">Expiry Date:</span><span class="detail-value" id="product-expiry"></span></div>
+              <div class="product-detail-item"><span class="detail-label">Manufacture Date:</span><span class="detail-value" id="product-manufacture"></span></div>
+              <div class="product-detail-item"><span class="detail-label">Mrp:</span><span class="detail-value" id="product-mrp"></span></div>
+              <div class="product-detail-item"><span class="detail-label">Produced At:</span><span class="detail-value" id="product-produced-at"></span></div>
             </div>
             <div class="device-count-section">
-              <p class="device-count-text">This product has been scanned on <strong>5</strong> unique devices.</p>
+              <p class="device-count-text" id="device-count-text"></p>
               <button class="view-more-btn">View more &#x25BC;</button>
-              <div class="mt-3 border p-2 rounded" style="display: none;">
-                <h6>Last 3 scans:</h6>
-                <div class="mb-2">
-                  <p class="mb-0"><strong>Device:</strong> 71be5a79f8c6d45022b31195f265ebcd</p>
-                  <p class="mb-0"><strong>Location:</strong> undefined,undefined</p>
-                  <p class="mb-0"><strong>Time:</strong> 23/09/2026, 7:15:33 AM</p>
-                  <hr>
-                </div>
-                <div class="mb-2">
-                  <p class="mb-0"><strong>Device:</strong> ef2b6a-47ec-87d9fb</p>
-                  <p class="mb-0"><strong>Location:</strong> (,)</p>
-                  <p class="mb-0"><strong>Time:</strong> 21/11/2025, 7:19:56 PM</p>
-                  <hr>
-                </div>
-                <div class="mb-2">
-                  <p class="mb-0"><strong>Device:</strong> dd2bd0-4045-a020e2</p>
-                  <p class="mb-0"><strong>Location:</strong> (27.00657,75.704372)</p>
-                  <p class="mb-0"><strong>Time:</strong> 21/11/2025, 7:05:07 PM</p>
-                  <hr>
-                </div>
-                <p class="mt-2 text-muted">Product scanned on 2 more devices.</p>
+              <div class="mt-3 border p-2 rounded" style="display: none;" id="scans-container">
+                <h6 id="scans-count-heading"></h6>
+                <div id="scans-list"></div>
+                <p class="mt-2 text-muted" id="additional-scans-text"></p>
               </div>
             </div>
           </div>
@@ -118,6 +95,7 @@
       }
     });
   </script>
+  <script src="index.js"></script>
 </body>
 
 </html>
