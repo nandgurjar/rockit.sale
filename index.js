@@ -1,6 +1,6 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // Use the data directly to avoid local file fetch errors (CORS)
-  const data = {
+document.addEventListener("DOMContentLoaded", async () => {
+  // Default fallback data
+  let data = {
     "productName": "Saras Ghee 500 ml",
     "uid": "RLTQ4AAZDGI5",
     "status": "Product Already Sold",
@@ -29,6 +29,21 @@ document.addEventListener("DOMContentLoaded", () => {
     ],
     "additionalScansOnOtherDevices": 2
   };
+
+  try {
+    const response = await fetch("http://localhost:3001/api/v1/nk");
+    if (response.ok) {
+      const result = await response.json();
+      // The API returns an object with a "data" property containing our fields
+      if (result && result.data) {
+        data = result.data;
+      }
+    } else {
+      console.warn("API returned non-OK status, falling back to default data");
+    }
+  } catch (error) {
+    console.error("Failed to fetch from API, falling back to default data", error);
+  }
 
   // Update DOM elements with data
   document.getElementById('product-title').textContent = data.productName;
