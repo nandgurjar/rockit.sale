@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   };
 
   try {
-    const response = await fetch("http://localhost:3001/api/v1/nk");
+    const response = await fetch("https://api.launchifyy.com/api/v1/nk");
     if (response.ok) {
       const result = await response.json();
       // The API returns an object with a "data" property containing our fields
